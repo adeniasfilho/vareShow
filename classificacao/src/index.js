@@ -4,10 +4,10 @@ const app = express();
 app.use(express.json());
 
 const chavePrimaria = "INSCRICAO";
-const functions = {
+const funcoes = {
     ObservacaoCriada : (observacao) => {
         observacao.status = 
-            observacao.lojista.includes(chavePrimaria) ? 
+            observacao.cadastro.includes(chavePrimaria) ? 
             "CNPJ" : "CPF";
         axios.post("http://localhost:10000/eventos", {
             tipo: "ObservacaoClassificada",

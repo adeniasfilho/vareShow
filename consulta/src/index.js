@@ -24,7 +24,7 @@ const funcoes = {
 app.get("/lojistas", (req, res) => {
     res.status(200).send(baseConsulta);
 });
-app.put("/eventos", (req, res) => {
+app.post("/eventos", (req, res) => {
     try {
         funcoes[req.body.tipo](req.body.dados);
     }catch(err){}

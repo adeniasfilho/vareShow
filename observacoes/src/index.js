@@ -33,17 +33,17 @@ app.post("/eventos", (req, res) => {
 app.put("/lojistas/:id/observacoes", async(req, res) => {
     const idObs = uuidv4();
     const {
-        lojistas = [
+        cadastro : [
             {
-            id:id ,
-            INSCRICAO: [lojista.INSCRICAO],
-            nomeFantasia: lojista.nomeFantasia,
-            razaoSocial: lojista.razaoSocial,
-            Endereco: lojista.Endereco,
-            Numero: lojista.Numero,
-            CEP: lojista.CEP,
-            Telefone: lojista.Telefone,
-            Email: lojista.Email
+            
+            INSCRICAO: [INSCRICAO],
+            nomeFantasia: nomeFantasia,
+            razaoSocial: razaoSocial,
+            Endereco: Endereco,
+            Numero: Numero,
+            CEP: CEP,
+            Telefone: Telefone,
+            Email: Email
             }
         ],
     } = req.body;
@@ -51,19 +51,7 @@ app.put("/lojistas/:id/observacoes", async(req, res) => {
         observacoesPorLojistaId [req.params.id] || [];
     observacoesDoLojista.push({
             id: idObs,
-            lojistas = [
-                {
-                id:id ,
-                INSCRICAO: [lojista.INSCRICAO],
-                nomeFantasia: lojista.nomeFantasia,
-                razaoSocial: lojista.razaoSocial,
-                Endereco: lojista.Endereco,
-                Numero: lojista.Numero,
-                CEP: lojista.CEP,
-                Telefone: lojista.Telefone,
-                Email: lojista.Email
-                }
-            ],
+            cadastro ,
             status: "aguardando"
     });
         observacoesPorLojistaId[req.params.id] = 
@@ -73,20 +61,8 @@ app.put("/lojistas/:id/observacoes", async(req, res) => {
         tipo: "ObservacaoCriada",
         dados: {
             id: idObs,
-            lojistas = [
-                {
-                id:id ,
-                INSCRICAO: [lojista.INSCRICAO],
-                nomeFantasia: lojista.nomeFantasia,
-                razaoSocial: lojista.razaoSocial,
-                Endereco: lojista.Endereco,
-                Numero: lojista.Numero,
-                CEP: lojista.CEP,
-                Telefone: lojista.Telefone,
-                Email: lojista.Email
-                }
-            ],
-            lembreteId: req.params.id, 
+            cadastro,
+            lojistaId: req.params.id, 
             status: "aguardando"
 
         }
